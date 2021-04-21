@@ -1,0 +1,20 @@
+module.exports = {
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Hind Siliguri", "sans-serif"],
+      },
+      colors: {
+        primary: "#247CC0",
+        secondary: "#C72535",
+        dark: "#030D15",
+      },
+    },
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
