@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
             Shop Now
           </button>
         </div>
-        <div className="w-64 flex justify-between mx-auto mt-4">
+        <div className="w-54 flex items-center justify-between mx-auto mt-4">
           <AiOutlineLine size={48} />
           <AiOutlineLine size={48} className="text-gray-200" />
           <AiOutlineLine size={48} className="text-gray-200" />

@@ -6,7 +6,7 @@ const MenuBar: React.FC = () => {
   return (
     <div className="w-full">
       <div className="w-2/3 h-40 flex justify-center text-gray-600 items-center m-auto relative">
-        <div className="flex items-center uppercase  absolute left-0">
+        <div className="flex items-center absolute left-0">
           <MenuItem text="Woman" />
           <MenuItem text="Man" />
           <MenuItem text="Jewelry" />
