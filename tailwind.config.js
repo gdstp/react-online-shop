@@ -11,6 +11,9 @@ module.exports = {
         secondary: "#C72535",
         dark: "#030D15",
       },
+      height: {
+        hero: "calc(100vh - 4rem)",
+      },
     },
   },
   variants: {
