@@ -12,7 +12,7 @@ module.exports = {
         dark: "#030D15",
       },
       height: {
-        hero: "calc(100vh - 4rem)",
+        hero: "calc(100vh - 10rem)",
       },
     },
   },
