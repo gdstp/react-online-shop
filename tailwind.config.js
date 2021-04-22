@@ -7,7 +7,7 @@ module.exports = {
         sans: ["Hind Siliguri", "sans-serif"],
       },
       colors: {
-        primary: "#247CC0",
+        primary: "#FFD2C1",
         secondary: "#C72535",
         dark: "#030D15",
       },
