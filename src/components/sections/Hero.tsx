@@ -1,21 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../layout/Container";
-import { AiOutlineLine } from "react-icons/ai";
+import HeroItem from "./partials/HeroItem";
+import SlideShowBar from "../ui/SlideShowBar";
+import Eletronics from "../../assets/imgs/eletronics-hero.png";
+import Group from "../../assets/imgs/group-hero.png";
+import Jewels from "../../assets/imgs/jewels-hero.png";
 
 const Hero: React.FC = () => {
+  const [selectedItem, setSelectedItem] = useState(0);
+  const HeroArr = [
+    {
+      title: "New collection",
+      button: "Shop Now",
+      image: Jewels,
+    },
+    {
+      title: "Latest Technologies",
+      button: "Shop Now",
+      image: Eletronics,
+    },
+    {
+      title: "For everyone",
+      button: "Shop Now",
+      image: Group,
+    },
+  ];
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (selectedItem >= 2) {
+        return setSelectedItem(0);
+      }
+      setSelectedItem(selectedItem + 1);
+    }, 5000);
+  }, [selectedItem]);
+
   return (
     <Container>
       <div className="h-hero flex flex-col">
-        <div className="flex flex-col justify-center items-center bg-gray-200 h-5/6">
-          <p className="text-5xl font-semibold text-white">New collection</p>
-          <button className="px-4 py-2 mt-20 bg-white text-black text-lg font-semibold">
-            Shop Now
-          </button>
+        <div className="bg-gray-200 h-5/6">
+          {HeroArr.map((item, index) => (
+            <HeroItem
+              key={item.title}
+              show={index === selectedItem}
+              title={item.title}
+              button={item.button}
+              image={item.image}
+            />
+          ))}
         </div>
         <div className="w-54 flex items-center justify-between mx-auto mt-4">
-          <AiOutlineLine size={48} />
-          <AiOutlineLine size={48} className="text-gray-200" />
-          <AiOutlineLine size={48} className="text-gray-200" />
+          <SlideShowBar
+            onClick={() => setSelectedItem(0)}
+            selectedItem={selectedItem === 0}
+          />
+          <SlideShowBar
+            onClick={() => setSelectedItem(1)}
+            selectedItem={selectedItem === 1}
+          />
+          <SlideShowBar
+            onClick={() => setSelectedItem(2)}
+            selectedItem={selectedItem === 2}
+          />
         </div>
       </div>
     </Container>
