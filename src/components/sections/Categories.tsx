@@ -1,18 +1,26 @@
 import React from "react";
 import Container from "../layout/Container";
 import CategoryCard from "./partials/CategoryCard";
+import Jewels from "../../assets/imgs/jewels-category.jpg";
+import Woman from "../../assets/imgs/woman-category.jpg";
+import Man from "../../assets/imgs/man-category.png";
+import Eletronic from "../../assets/imgs/eletronics-category.png";
 
 const Categories: React.FC = () => {
   return (
     <Container className="flex flex-col h-categoryContainer">
       <div className="flex justify-between w-full h-categoryImages">
-        <CategoryCard className="w-1/2" title="Jewelry" />
+        <CategoryCard className="w-1/2" title="Jewelry" image={Jewels} />
         <div className="w-1/2 flex">
           <div className="w-1/2 ml-6 flex flex-col justify-between">
-            <CategoryCard className="w-full h-64" title="Woman" />
-            <CategoryCard className="w-full h-64" title="Man" />
+            <CategoryCard className="w-full h-64" title="Woman" image={Woman} />
+            <CategoryCard className="w-full h-64" title="Man" image={Man} />
           </div>
-          <CategoryCard className="w-1/2 ml-6" title="Eletronics" />
+          <CategoryCard
+            className="w-1/2 ml-6"
+            title="Eletronics"
+            image={Eletronic}
+          />
         </div>
       </div>
 

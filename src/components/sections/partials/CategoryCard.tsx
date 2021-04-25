@@ -1,16 +1,26 @@
 import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 
-const CategoryCard: React.FC<Partial<HTMLDivElement> & { title: string }> = ({
-  title,
-  ...rest
-}) => {
+const CategoryCard: React.FC<
+  Partial<HTMLDivElement> & { title: string; image: any }
+> = ({ title, image, ...rest }) => {
+  const style = {
+    background: `url(${image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    width: "100%",
+    height: "100%",
+  };
   return (
     <div
-      className={`${rest.className} border bg-gray-200 relative flex justify-center items-center`}
+      className={`${rest.className} relative flex flex-col justify-center items-center`}
     >
-      <p className="font-semibold text-4xl text-white">{title}</p>
-      <span className="w-16 h-16 rounded-full absolute bottom-0 right-0 mr-4 mb-4 bg-white flex justify-center items-center">
+      <div className="flex justify-center items-center absolute z-20">
+        <p className="font-semibold text-4xl text-white">{title}</p>
+      </div>
+      <div className="w-full h-full absolute t-0 l-0 z-10 bg-gray-400 bg-opacity-50 hover:bg-gray-700 hover:bg-opacity-50" />
+      <div style={style} />
+      <span className="w-16 h-16 rounded-full absolute z-20 bottom-0 right-0 mr-4 mb-4 bg-white flex justify-center items-center">
         <BsArrowRightShort className="text-black" size={26} />
       </span>
     </div>
