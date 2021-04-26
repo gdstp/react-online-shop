@@ -2,7 +2,6 @@ import React, { useEffect, useReducer } from "react";
 import { getFeaturedProducts } from "store/actions/ProductsActions";
 import { ProductsReducer } from "store/reducers/ProductsReducer";
 import { initialFeaturedState } from "store/types/ProductsType";
-import Container from "components/layout/Container";
 import FeaturedProductCard from "./partials/FeaturedProductCard";
 import FeatureProductsLoading from "components/Loading/FeatureProductsLoading";
 

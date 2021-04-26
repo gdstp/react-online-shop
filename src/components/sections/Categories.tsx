@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "../layout/Container";
 import CategoryCard from "./partials/CategoryCard";
 import Jewels from "../../assets/imgs/jewels-category.jpg";
 import Woman from "../../assets/imgs/woman-category.jpg";

@@ -1,5 +1,6 @@
 import React from "react";
 import { BiSearch, BiCart, BiUser } from "react-icons/bi";
+import { Link } from "react-router-dom";
 import MenuItem from "./partials/MenuItem";
 
 const MenuBar: React.FC = () => {
@@ -7,15 +8,17 @@ const MenuBar: React.FC = () => {
     <div className="w-full">
       <div className="w-2/3 h-40 flex justify-center text-gray-600 items-center m-auto relative">
         <div className="flex items-center absolute left-0">
-          <MenuItem text="Woman" />
-          <MenuItem text="Man" />
-          <MenuItem text="Jewelry" />
-          <MenuItem text="About" />
-          <MenuItem text="Contact" />
+          <MenuItem to="/categories/women's clothing" text="Women" />
+          <MenuItem to="/categories/men's clothing" text="Men" />
+          <MenuItem to="/categories/jewelery" text="Jewelry" />
+          <MenuItem to="about" text="About" />
+          <MenuItem to="contact" text="Contact" />
         </div>
 
         <div className="font-bold text-2xl">
-          <span className="text-primary">S</span>hop.
+          <Link to="/">
+            <span className="text-primary">S</span>hop.
+          </Link>
         </div>
 
         <div className="flex absolute right-0">

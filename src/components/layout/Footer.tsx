@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
       </div>
 
       <p className="uppercase text-xs h-12 flex items-center justify-center">
-        <a href="#" className="flex items-center justify-center mr-1">
+        <span className="flex items-center justify-center mr-1">
           <AiFillGithub size={16} className="mr-1" /> gdstp
-        </a>
+        </span>
         copyright &copy; 2021
       </p>
     </div>

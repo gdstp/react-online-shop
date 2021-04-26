@@ -8,3 +8,10 @@ export const getFeaturedProducts = async (
   const resp = await api.get(`/products${cat}?limit=4`);
   return resp.data;
 };
+
+export const getCategoryItems = async (
+  category: string
+): Promise<Products[]> => {
+  const resp = await api.get(`/products/category/${category}`);
+  return resp.data;
+};

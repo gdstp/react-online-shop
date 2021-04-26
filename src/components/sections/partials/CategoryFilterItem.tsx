@@ -23,10 +23,16 @@ const CategoryFilterItem: React.FC<ItemProps> = ({ title, items }) => {
         {!show ? <BiChevronDown size={20} /> : <BiChevronUp size={20} />}
       </DropdownItem>
       <div
-        className={`${show ? "flex" : "hidden"} flex-col absolute t-0 w-full`}
+        className={`${
+          show ? "flex" : "hidden"
+        } flex-col absolute z-10 bg-white t-0 w-full`}
       >
         {items.map((item) => (
-          <DropdownItem onClick={() => updateCurrent(item)} item={item} />
+          <DropdownItem
+            key={item}
+            onClick={() => updateCurrent(item)}
+            item={item}
+          />
         ))}
       </div>
     </div>

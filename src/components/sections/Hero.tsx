@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Container from "../layout/Container";
 import HeroItem from "./partials/HeroItem";
 import SlideShowBar from "../ui/SlideShowBar";
 import Eletronics from "../../assets/imgs/eletronics-hero.png";
