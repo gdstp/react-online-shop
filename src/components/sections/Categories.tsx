@@ -8,7 +8,7 @@ import Eletronic from "../../assets/imgs/eletronics-category.png";
 
 const Categories: React.FC = () => {
   return (
-    <Container className="flex flex-col h-categoryContainer">
+    <div className="flex flex-col h-categoryContainer">
       <div className="flex justify-between w-full h-categoryImages">
         <CategoryCard className="w-1/2" title="Jewelry" image={Jewels} />
         <div className="w-1/2 flex">
@@ -29,7 +29,7 @@ const Categories: React.FC = () => {
         fermentum nibh, vel aliquet massa. Etiam in magna id risus lacinia
         luctus eget eu est.
       </p>
-    </Container>
+    </div>
   );
 };
 

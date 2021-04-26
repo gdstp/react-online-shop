@@ -3,7 +3,7 @@ import { getFeaturedProducts } from "store/actions/ProductsActions";
 import { ProductsReducer } from "store/reducers/ProductsReducer";
 import { initialFeaturedState } from "store/types/ProductsType";
 import Container from "components/layout/Container";
-import FeaturedProductCard from "./partials/FeatureProductCard";
+import FeaturedProductCard from "./partials/FeaturedProductCard";
 import FeatureProductsLoading from "components/Loading/FeatureProductsLoading";
 
 const FeaturedProducts: React.FC = () => {
@@ -24,7 +24,7 @@ const FeaturedProducts: React.FC = () => {
   }, []);
 
   return (
-    <Container>
+    <div>
       {error && <p>{error}</p>}
       <div className="w-full flex flex-col items-center mt-16">
         <h1 className="text-4xl font-semibold">Featured Products</h1>
@@ -48,7 +48,7 @@ const FeaturedProducts: React.FC = () => {
             />
           ))}
       </div>
-    </Container>
+    </div>
   );
 };
 
