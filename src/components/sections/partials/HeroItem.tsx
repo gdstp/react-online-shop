@@ -19,7 +19,11 @@ const HeroItem: React.FC<{
         </button>
       </div>
       <div className="absolute z-10 w-full h-full bg-gray-700 bg-opacity-50"></div>
-      <img src={image} className="w-full h-full absolute t-0 l-0 z-0" />
+      <img
+        src={image}
+        className="w-full h-full absolute t-0 l-0 z-0"
+        alt="failed"
+      />
     </div>
   );
 };

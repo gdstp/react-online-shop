@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
   ];
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    setTimeout(() => {
       if (selectedItem >= 2) {
         return setSelectedItem(0);
       }
