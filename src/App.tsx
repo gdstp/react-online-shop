@@ -1,3 +1,4 @@
+import NotFound from "components/sections/NotFound";
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
 import PublicRoute from "routes/PublicRoute";
@@ -12,6 +13,7 @@ function App() {
         <PublicRoute path="/" exact component={Home} />
         <PublicRoute path="/categories/:name" component={Category} />
         <PublicRoute path="/products/:id" component={Products} />
+        <PublicRoute path="/404" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );

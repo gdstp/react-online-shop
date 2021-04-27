@@ -9,7 +9,6 @@ const PageContainer: React.FC = ({ children }) => {
     <>
       <MenuBar />
       <Container>{children}</Container>
-      <Subscribe />
       <Footer />
     </>
   );

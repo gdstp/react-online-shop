@@ -15,3 +15,11 @@ export const getCategoryItems = async (
   const resp = await api.get(`/products/category/${category}`);
   return resp.data;
 };
+
+export const getSingleItem = async (itemId: number): Promise<Products> => {
+  const resp = await api.get(`/products/${itemId}`);
+  if (resp.data.length === 0) {
+    Promise.reject("failed");
+  }
+  return resp.data;
+};

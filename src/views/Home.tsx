@@ -1,3 +1,4 @@
+import Subscribe from "components/sections/Subscribe";
 import React from "react";
 import Categories from "../components/sections/Categories";
 import FeaturedProducts from "../components/sections/FeaturedProducts";
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
       <Hero />
       <Categories />
       <FeaturedProducts />
+      <Subscribe />
     </div>
   );
 };
