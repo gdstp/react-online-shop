@@ -2,15 +2,13 @@ import React, { useEffect, useReducer } from "react";
 import FeatureProductsLoading from "components/Loading/FeatureProductsLoading";
 import CategoryFilter from "components/sections/CategoryFilter";
 import FeaturedProductCard from "components/sections/partials/FeaturedProductCard";
-import { useLocation } from "react-router";
 import { getCategoryItems } from "store/actions/ProductsActions";
 import { ProductsReducer } from "store/reducers/ProductsReducer";
 import { initialFeaturedState } from "store/types/ProductsType";
+import useSplitUrl from "hooks/spliturl";
 
 const Category: React.FC = () => {
-  const location = useLocation();
-  const url = location.pathname.split("/");
-  const category = url[2];
+  const category = useSplitUrl()[2];
   const [{ products, loading }, dispatch] = useReducer(
     ProductsReducer,
     initialFeaturedState
@@ -21,7 +19,7 @@ const Category: React.FC = () => {
     getCategoryItems(category)
       .then((res) => dispatch({ type: "SUCCESS_FEATURED", payload: res }))
       .catch((err) => dispatch({ type: "FAILED_FEATURED", error: err }));
-  }, [location]);
+  }, [category]);
 
   return (
     <div>
@@ -35,6 +33,7 @@ const Category: React.FC = () => {
         {products &&
           products.map((prod) => (
             <FeaturedProductCard
+              id={prod.id}
               key={prod.id}
               name={prod.title}
               price={prod.price}

@@ -7,7 +7,11 @@ interface ItemProps {
   items: string[];
 }
 
-const CategoryFilterItem: React.FC<ItemProps> = ({ title, items }) => {
+const CategoryFilterItem: React.FC<Partial<HTMLDivElement> & ItemProps> = ({
+  title,
+  items,
+  ...rest
+}) => {
   const [show, setShow] = useState(false);
   const [current, setCurrent] = useState(items[0]);
 
@@ -17,7 +21,7 @@ const CategoryFilterItem: React.FC<ItemProps> = ({ title, items }) => {
   };
 
   return (
-    <div className="w-11/50 relative">
+    <div className={`w-11/50 relative ${rest.className} `}>
       <p className="text-sm mb-1">{title}</p>
       <DropdownItem onClick={() => setShow(!show)} item={current}>
         {!show ? <BiChevronDown size={20} /> : <BiChevronUp size={20} />}

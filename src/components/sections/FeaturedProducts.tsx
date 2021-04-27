@@ -41,6 +41,7 @@ const FeaturedProducts: React.FC = () => {
           products.map((prod) => (
             <FeaturedProductCard
               key={prod.id}
+              id={prod.id}
               name={prod.title}
               price={prod.price}
               image={prod.image}
