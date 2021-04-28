@@ -37,12 +37,16 @@ export const removeFromCart = async (id: number): Promise<CartInterface[]> => {
   });
 };
 
-export const updateCartStorage = async (id: number, quantity: string) => {
+export const updateCartStorage = async (
+  id: number,
+  quantity: string
+): Promise<CartInterface[]> => {
   const loaded = loadCartStorage();
   const arr = loaded.find((item) => item.id === id);
-  if (!arr) return;
+  if (!arr) return loaded;
   arr.quantity = quantity;
   localStorage.setItem("shop:cart", JSON.stringify(loaded));
+  return loaded;
 };
 
 export const loadCartStorage = (): CartInterface[] => {

@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Hind Siliguri", "sans-serif"],
+        sans: ["Poppins", "sans-serif"],
       },
       colors: {
         primary: "#FFD2C1",

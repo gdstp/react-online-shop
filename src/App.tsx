@@ -7,6 +7,7 @@ import Category from "views/Category";
 import Products from "views/Products";
 import Home from "./views/Home";
 import Cart from "views/Cart";
+import Checkout from "views/Checkout";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <PublicRoute path="/products/:id" component={Products} />
           <PublicRoute path="/cart" component={Cart} />
           <PublicRoute path="/404" component={NotFound} />
+          <PublicRoute path="/checkout" component={Checkout} />
         </Switch>
       </BrowserRouter>
     </AppProvider>

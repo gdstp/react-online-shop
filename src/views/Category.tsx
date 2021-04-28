@@ -6,6 +6,7 @@ import { getCategoryItems } from "store/actions/ProductsActions";
 import { ProductsReducer } from "store/reducers/ProductsReducer";
 import { initialFeaturedState } from "store/types/ProductsType";
 import useSplitUrl from "hooks/spliturl";
+import SectionHeader from "components/sections/SectionHeader";
 
 const Category: React.FC = () => {
   const category = useSplitUrl()[2];
@@ -23,9 +24,7 @@ const Category: React.FC = () => {
 
   return (
     <div>
-      <div className="w-full h-40 flex justify-center items-center bg-gray-200 text-4xl font-semibold uppercase">
-        {category}
-      </div>
+      <SectionHeader text={category} />
       <CategoryFilter />
       <div className="w-full flex flex-wrap justify-between mt-8">
         {loading &&

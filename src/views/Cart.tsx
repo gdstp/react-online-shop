@@ -1,5 +1,7 @@
 import CartItem from "components/sections/partials/CartItem";
 import CategoryFilterItem from "components/sections/partials/CategoryFilterItem";
+import CheckoutButton from "components/sections/partials/CheckoutButton";
+import SectionHeader from "components/sections/SectionHeader";
 import { AppCtx } from "context";
 import React, { useContext } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
@@ -9,9 +11,7 @@ const Cart: React.FC = () => {
 
   return (
     <div>
-      <div className="w-full h-40 flex justify-center items-center bg-gray-200 text-4xl font-semibold uppercase">
-        Shopping Cart
-      </div>
+      <SectionHeader text="Shopping Cart" />
 
       <div className="w-full flex mt-3 border-b h-10">
         <div className="w-2/3">Product</div>
@@ -54,6 +54,8 @@ const Cart: React.FC = () => {
 
         <CategoryFilterItem title="Shipping" items={["Express Delivery $20"]} />
       </div>
+
+      <CheckoutButton />
     </div>
   );
 };

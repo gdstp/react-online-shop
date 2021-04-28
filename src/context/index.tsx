@@ -36,7 +36,10 @@ export const AppProvider: React.FC = ({ children }) => {
         .catch((err) => console.log(err));
     type === "REMOVE" &&
       removeFromCart(item.id).then((res) => setCurrentCart(res));
-    type === "UPDATE" && updateCartStorage(item.id, item.quantity);
+    type === "UPDATE" &&
+      updateCartStorage(item.id, item.quantity).then((res) =>
+        setCurrentCart(res)
+      );
   };
 
   return (
