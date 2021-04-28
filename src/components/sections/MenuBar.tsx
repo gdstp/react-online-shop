@@ -1,5 +1,5 @@
 import React from "react";
-import { BiSearch, BiCart, BiUser } from "react-icons/bi";
+import { BiSearch, BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import CartItem from "../ui/CartIcon";
 import MenuItem from "./partials/MenuItem";

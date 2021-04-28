@@ -1,5 +1,10 @@
 import React, { createContext, useState } from "react";
-import { addToCart, loadCartStorage, removeFromCart } from "utils/localStorage";
+import {
+  addToCart,
+  loadCartStorage,
+  removeFromCart,
+  updateCartStorage,
+} from "utils/localStorage";
 
 export interface CartInterface {
   id: number;
@@ -11,7 +16,7 @@ export interface CartInterface {
 
 interface RequiredFields {
   item: CartInterface;
-  type: "ADD" | "REMOVE";
+  type: "ADD" | "REMOVE" | "UPDATE";
 }
 
 interface AppContextInterface {
@@ -31,9 +36,8 @@ export const AppProvider: React.FC = ({ children }) => {
         .catch((err) => console.log(err));
     type === "REMOVE" &&
       removeFromCart(item.id).then((res) => setCurrentCart(res));
+    type === "UPDATE" && updateCartStorage(item.id, item.quantity);
   };
-
-  const updateLikeStore = ({ item, type }: RequiredFields) => {};
 
   return (
     <AppCtx.Provider value={{ cart: currentCart, updateCart: updateCartStore }}>

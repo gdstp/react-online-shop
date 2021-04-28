@@ -1,5 +1,4 @@
 import MenuBar from "components/sections/MenuBar";
-import Subscribe from "components/sections/Subscribe";
 import React from "react";
 import Container from "./Container";
 import Footer from "./Footer";

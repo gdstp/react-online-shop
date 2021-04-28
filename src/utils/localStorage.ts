@@ -23,7 +23,6 @@ export const addToCart = ({
     }
 
     localStorage.setItem("shop:cart", JSON.stringify(arr));
-    console.log(arr);
     resolve(arr);
   });
 };
@@ -36,6 +35,14 @@ export const removeFromCart = async (id: number): Promise<CartInterface[]> => {
 
     resolve(arr);
   });
+};
+
+export const updateCartStorage = async (id: number, quantity: string) => {
+  const loaded = loadCartStorage();
+  const arr = loaded.find((item) => item.id === id);
+  if (!arr) return;
+  arr.quantity = quantity;
+  localStorage.setItem("shop:cart", JSON.stringify(loaded));
 };
 
 export const loadCartStorage = (): CartInterface[] => {
