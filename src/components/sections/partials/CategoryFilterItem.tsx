@@ -5,11 +5,13 @@ import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 interface ItemProps {
   title: string;
   items: string[];
+  handleChange?: (value: string) => void;
 }
 
 const CategoryFilterItem: React.FC<Partial<HTMLDivElement> & ItemProps> = ({
   title,
   items,
+  handleChange,
   ...rest
 }) => {
   const [show, setShow] = useState(false);
@@ -18,6 +20,9 @@ const CategoryFilterItem: React.FC<Partial<HTMLDivElement> & ItemProps> = ({
   const updateCurrent = (item: string) => {
     setCurrent(item);
     setShow(false);
+    if (handleChange) {
+      handleChange(item);
+    }
   };
 
   return (

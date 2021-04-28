@@ -1,6 +1,7 @@
 import React from "react";
 import { BiSearch, BiCart, BiUser } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import CartItem from "../ui/CartIcon";
 import MenuItem from "./partials/MenuItem";
 
 const MenuBar: React.FC = () => {
@@ -11,6 +12,7 @@ const MenuBar: React.FC = () => {
           <MenuItem to="/categories/women's clothing" text="Women" />
           <MenuItem to="/categories/men's clothing" text="Men" />
           <MenuItem to="/categories/jewelery" text="Jewelry" />
+          <MenuItem to="/categories/electronics" text="Electronics" />
           <MenuItem to="about" text="About" />
           <MenuItem to="contact" text="Contact" />
         </div>
@@ -23,7 +25,7 @@ const MenuBar: React.FC = () => {
 
         <div className="flex absolute right-0">
           <BiSearch size={20} className="mx-4" />
-          <BiCart size={20} className="mx-4" />
+          <CartItem />
           <BiUser size={20} className="mx-4" />
         </div>
       </div>

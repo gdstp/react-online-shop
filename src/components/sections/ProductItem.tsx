@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import styled from "styled-components";
 import useParseUrl from "hooks/spliturl";
 import { BiHeart } from "react-icons/bi";
@@ -9,6 +9,7 @@ import { initialSingleProductState } from "store/types/ProductsType";
 import { getSingleItem } from "store/actions/ProductsActions";
 import ProductItemLoading from "components/Loading/ProductItemLoading";
 import { Redirect } from "react-router";
+import { AppCtx } from "context";
 
 const Image = styled.div<{ image: string }>`
   width: 50%;
@@ -20,12 +21,14 @@ const Image = styled.div<{ image: string }>`
 `;
 
 const ProductItem: React.FC = () => {
+  const { updateCart, cart } = useContext(AppCtx);
   const productId = parseInt(useParseUrl()[2]);
   const [{ product, error, loading }, dispatch] = useReducer(
     SingleProductReducer,
     initialSingleProductState
   );
   const [desc, setDesc] = useState(true);
+  const [quantity, setQuantity] = useState("1");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,6 +37,19 @@ const ProductItem: React.FC = () => {
       .then((res) => dispatch({ type: "SUCCESS_PRODUCT", payload: res }))
       .catch((err) => dispatch({ type: "FAILED_PRODUCT", error: err }));
   }, [productId]);
+
+  const handleClick = () => {
+    updateCart({
+      item: {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        quantity,
+        image: product.image,
+      },
+      type: !cart.some((item) => item.id === product.id) ? "ADD" : "REMOVE",
+    });
+  };
 
   return (
     <>
@@ -53,11 +69,19 @@ const ProductItem: React.FC = () => {
                 title="Quantity:"
                 items={["1", "2", "3", "4", "5"]}
                 className="mt-6"
+                handleChange={(value) => {
+                  setQuantity(value);
+                }}
               />
 
               <div className="flex mt-8">
-                <button className="w-40 py-2 bg-black text-white">
-                  Add to Cart
+                <button
+                  className="w-40 py-2 bg-black text-white"
+                  onClick={() => handleClick()}
+                >
+                  {!cart.some((item) => item.id === product.id)
+                    ? "Add to Cart"
+                    : "Remove from Cart"}
                 </button>
                 <button className="flex justify-center ml-4 items-center w-40 py-2 text-sm font-semibold hover:text-red-500 transition">
                   <BiHeart size={20} className="mr-2" />
