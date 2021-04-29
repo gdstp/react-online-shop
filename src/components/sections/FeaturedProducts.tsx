@@ -27,12 +27,12 @@ const FeaturedProducts: React.FC = () => {
       {error && <p>{error}</p>}
       <div className="w-full flex flex-col items-center mt-16">
         <h1 className="text-4xl font-semibold">Featured Products</h1>
-        <div className="flex mt-6">
+        {/* <div className="flex mt-6">
           <p className="px-2 border-b">All</p>
           <p className="px-2 text-gray-600">Popular</p>
           <p className="px-2 text-gray-600">New</p>
           <p className="px-2 text-gray-600">Sale</p>
-        </div>
+        </div> */}
       </div>
       <div className="w-full flex justify-between mt-8">
         {loading &&

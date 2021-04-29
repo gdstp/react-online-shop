@@ -1,16 +1,10 @@
-import Button from "components/ui/Button";
-import CartTotal from "components/ui/CartTotal";
-import { AppCtx, CartInterface } from "context";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import CartTotal from "components/ui/CartTotal";
+import { AppCtx } from "context";
 import OrderItem from "./OrderItem";
 
 const Order: React.FC = () => {
-  const { cart, updateCart } = useContext(AppCtx);
-
-  const resetCart = () => {
-    updateCart({ type: "RESET", item: {} as CartInterface });
-  };
+  const { cart } = useContext(AppCtx);
 
   return (
     <div className="w-1/3">

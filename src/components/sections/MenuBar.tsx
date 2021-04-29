@@ -13,8 +13,8 @@ const MenuBar: React.FC = () => {
           <MenuItem to="/categories/men's clothing" text="Men" />
           <MenuItem to="/categories/jewelery" text="Jewelry" />
           <MenuItem to="/categories/electronics" text="Electronics" />
-          <MenuItem to="about" text="About" />
-          <MenuItem to="contact" text="Contact" />
+          <MenuItem to="/about" text="About" />
+          <MenuItem to="/contact" text="Contact" />
         </div>
 
         <div className="font-bold text-2xl">

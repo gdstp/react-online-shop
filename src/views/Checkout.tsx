@@ -1,13 +1,13 @@
-import React, { FormEvent, useContext } from "react";
+import React, { useContext } from "react";
 import SectionHeader from "components/sections/SectionHeader";
 import Input from "components/ui/Input";
 import Order from "components/sections/partials/Order";
 import CategoryFilterItem from "components/sections/partials/CategoryFilterItem";
 import { useForm } from "react-hook-form";
-import { AppCtx } from "context";
+import { AppCtx, CartInterface } from "context";
 
 const Checkout: React.FC = () => {
-  const { cart } = useContext(AppCtx);
+  const { cart, updateCart } = useContext(AppCtx);
 
   const {
     handleSubmit,
@@ -17,6 +17,8 @@ const Checkout: React.FC = () => {
 
   const onSubmit = (data: any) => {
     console.log(data);
+    updateCart({ type: "RESET", item: {} as CartInterface });
+    window.location.href = "/checkout-complete";
   };
 
   return (

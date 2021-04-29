@@ -1,9 +1,10 @@
 import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const CategoryCard: React.FC<
-  Partial<HTMLDivElement> & { title: string; image: any }
-> = ({ title, image, ...rest }) => {
+  Partial<HTMLDivElement> & { title: string; image: any; url: string }
+> = ({ title, image, url, ...rest }) => {
   const style = {
     background: `url(${image})`,
     backgroundSize: "cover",
@@ -12,8 +13,9 @@ const CategoryCard: React.FC<
     height: "100%",
   };
   return (
-    <div
+    <Link
       className={`${rest.className} relative flex flex-col justify-center items-center`}
+      to={url}
     >
       <div className="flex justify-center items-center absolute z-20">
         <p className="font-semibold text-4xl text-white">{title}</p>
@@ -23,7 +25,7 @@ const CategoryCard: React.FC<
       <span className="w-16 h-16 rounded-full absolute z-20 bottom-0 right-0 mr-4 mb-4 bg-white flex justify-center items-center">
         <BsArrowRightShort className="text-black" size={26} />
       </span>
-    </div>
+    </Link>
   );
 };
 

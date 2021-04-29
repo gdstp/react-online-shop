@@ -1,6 +1,5 @@
 import React, { useEffect, useReducer } from "react";
 import FeatureProductsLoading from "components/Loading/FeatureProductsLoading";
-import CategoryFilter from "components/sections/CategoryFilter";
 import FeaturedProductCard from "components/sections/partials/FeaturedProductCard";
 import { getCategoryItems } from "store/actions/ProductsActions";
 import { ProductsReducer } from "store/reducers/ProductsReducer";

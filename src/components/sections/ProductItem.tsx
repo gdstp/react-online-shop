@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useReducer, useState } from "react";
 import styled from "styled-components";
 import useParseUrl from "hooks/spliturl";
-import { BiHeart } from "react-icons/bi";
 import ProductInfoSwitch from "components/sections/partials/ProductInfoSwitch";
 import CategoryFilterItem from "components/sections/partials/CategoryFilterItem";
 import { SingleProductReducer } from "store/reducers/ProductsReducer";
@@ -83,10 +82,10 @@ const ProductItem: React.FC = () => {
                     ? "Add to Cart"
                     : "Remove from Cart"}
                 </button>
-                <button className="flex justify-center ml-4 items-center w-40 py-2 text-sm font-semibold hover:text-red-500 transition">
+                {/* <button className="flex justify-center ml-4 items-center w-40 py-2 text-sm font-semibold hover:text-red-500 transition">
                   <BiHeart size={20} className="mr-2" />
                   Add to Favorites
-                </button>
+                </button> */}
               </div>
               <p className="mt-6">{product.description}</p>
             </div>
