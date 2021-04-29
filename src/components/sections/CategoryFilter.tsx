@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CategoryFilterItem from "./partials/CategoryFilterItem";
 
 const CategoryFilter: React.FC = () => {

@@ -25,7 +25,7 @@ const Category: React.FC = () => {
   return (
     <div>
       <SectionHeader text={category} />
-      <CategoryFilter />
+      {/* <CategoryFilter /> */}
       <div className="w-full flex flex-wrap justify-between mt-8">
         {loading &&
           [0, 1, 2, 3].map((item) => <FeatureProductsLoading key={item} />)}

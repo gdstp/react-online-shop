@@ -9,6 +9,7 @@ import Home from "./views/Home";
 import Cart from "views/Cart";
 import Checkout from "views/Checkout";
 import CheckoutCompleted from "views/CheckoutCompleted";
+import About from "views/About";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             path="/checkout-complete"
             component={CheckoutCompleted}
           />
+          <PublicRoute path="/about" component={About} />
         </Switch>
       </BrowserRouter>
     </AppProvider>
