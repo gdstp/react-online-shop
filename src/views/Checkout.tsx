@@ -1,41 +1,90 @@
-import React from "react";
+import React, { FormEvent, useContext } from "react";
 import SectionHeader from "components/sections/SectionHeader";
-import Button from "components/ui/Button";
-import { Link } from "react-router-dom";
-import CartTotal from "components/ui/CartTotal";
 import Input from "components/ui/Input";
 import Order from "components/sections/partials/Order";
 import CategoryFilterItem from "components/sections/partials/CategoryFilterItem";
+import { useForm } from "react-hook-form";
+import { AppCtx } from "context";
 
 const Checkout: React.FC = () => {
+  const { cart } = useContext(AppCtx);
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <div>
       <SectionHeader text="Checkout" />
       <div className="flex justify-between mt-6">
-        <div className="w-2/3 h-1/2 flex flex-col justify-between">
+        <form
+          className="w-2/3 h-1/2 flex flex-col justify-between"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="w-full flex justify-between">
-            <Input name="E-mail" />
-            <Input name="Phone" />
+            <Input
+              label="E-mail"
+              register={register}
+              errors={errors}
+              required
+            />
+            <Input label="Phone" register={register} errors={errors} required />
           </div>
 
           <p className="font-semibold text-2xl mt-6">Shipping address</p>
           <div className="w-full flex justify-between mt-3">
-            <Input name="First name" />
-            <Input name="Last name" />
+            <Input
+              label="First name"
+              register={register}
+              errors={errors}
+              required
+            />
+            <Input
+              label="Last name"
+              register={register}
+              errors={errors}
+              required
+            />
           </div>
 
           <div className="w-full flex justify-between mt-3">
-            <Input name="Address" />
-            <Input name="Apt, suite, etc" />
+            <Input
+              label="Address"
+              register={register}
+              errors={errors}
+              required
+            />
+            <Input
+              label="Apt, suite, etc"
+              register={register}
+              errors={errors}
+              required
+            />
           </div>
 
           <div className="w-full flex justify-between mt-3">
-            <Input name="City" />
-            <Input name="Country" />
+            <Input label="City" register={register} errors={errors} required />
+            <Input
+              label="Country"
+              register={register}
+              errors={errors}
+              required
+            />
           </div>
 
           <div className="w-1/2 flex justify-between mt-3">
-            <Input name="Postal code" />
+            <Input
+              label="Postal Code"
+              register={register}
+              errors={errors}
+              required
+            />
           </div>
 
           <p className="font-semibold text-2xl mt-6">Payment Method</p>
@@ -43,7 +92,18 @@ const Checkout: React.FC = () => {
             title=""
             items={["Visa / Mastercard", "Paypal"]}
           />
-        </div>
+          <div className="w-full flex justify-center mt-10">
+            <button
+              type="submit"
+              disabled={cart.length === 0 ? true : false}
+              className={`w-2/3 h-12 text-white bg-black flex items-center justify-center font-bold ${
+                cart.length === 0 ? "cursor-not-allowed" : "cursor-pointer"
+              }`}
+            >
+              Proceed to Payment
+            </button>
+          </div>
+        </form>
         <Order />
       </div>
     </div>

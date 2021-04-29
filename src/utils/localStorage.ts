@@ -49,6 +49,11 @@ export const updateCartStorage = async (
   return loaded;
 };
 
+export const resetCartStorage = async (): Promise<[]> => {
+  localStorage.removeItem("shop:cart");
+  return [];
+};
+
 export const loadCartStorage = (): CartInterface[] => {
   const storedContent = localStorage.getItem("shop:cart");
   return storedContent === null ? [] : JSON.parse(storedContent);

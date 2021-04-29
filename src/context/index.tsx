@@ -3,6 +3,7 @@ import {
   addToCart,
   loadCartStorage,
   removeFromCart,
+  resetCartStorage,
   updateCartStorage,
 } from "utils/localStorage";
 
@@ -16,7 +17,7 @@ export interface CartInterface {
 
 interface RequiredFields {
   item: CartInterface;
-  type: "ADD" | "REMOVE" | "UPDATE";
+  type: "ADD" | "REMOVE" | "UPDATE" | "RESET";
 }
 
 interface AppContextInterface {
@@ -40,6 +41,7 @@ export const AppProvider: React.FC = ({ children }) => {
       updateCartStorage(item.id, item.quantity).then((res) =>
         setCurrentCart(res)
       );
+    type === "RESET" && resetCartStorage().then((res) => setCurrentCart(res));
   };
 
   return (
