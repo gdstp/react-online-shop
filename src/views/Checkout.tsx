@@ -42,6 +42,7 @@ const Checkout: React.FC = () => {
               register={register}
               errors={errors}
               mask="(+7 (999) 999-99-99)"
+              type="number"
               required
             />
           </div>

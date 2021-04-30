@@ -12,7 +12,7 @@ const Input: React.FC<{
   return (
     <div className="w-full flex flex-col">
       <label>{label}</label>
-      <MaskedInput
+      <input
         type={type ? type : "text"}
         mask={mask && mask}
         {...register(label, { required })}
