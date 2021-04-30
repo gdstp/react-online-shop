@@ -22,7 +22,7 @@ The project was bootstrapped from create-react-app. For styling the components a
 
 ## Available Scripts
 
-In the project directory, you can run: https://react-online-shop.vercel.app/
+In the project directory, you can run: [App](https://react-online-shop.vercel.app/)
 
 ### `yarn start`
 
