@@ -72,7 +72,7 @@ const ProductItem: React.FC = () => {
               <CategoryFilterItem
                 title="Quantity:"
                 items={["1", "2", "3", "4", "5"]}
-                className="mt-6"
+                className="lg:w-1/3 mt-6"
                 handleChange={(value) => {
                   setQuantity(value);
                 }}
