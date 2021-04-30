@@ -13,20 +13,20 @@ const Contact: React.FC = () => {
           luctus eget eu est.
         </p>
 
-        <div className="w-full flex justify-between mt-14">
-          <div className="w-1/3 h-40 border border-black flex flex-col justify-center items-center px-10">
+        <div className="w-full flex lg:flex-row flex-col justify-between mt-14">
+          <div className="w-full lg:w-1/3 h-40 border border-black flex flex-col justify-center items-center px-10">
             <span className="text-xs text-gray-400">Address</span>
             <p className="font-bold text-center mt-4">
               27 W 24th St, <br /> New York, NY 10010, USA
             </p>
           </div>
 
-          <div className="w-1/3 ml-6 h-40 border border-black flex flex-col justify-center items-center px-10">
+          <div className="w-full lg:w-1/3 lg:ml-6 h-40 border border-black flex flex-col justify-center items-center px-10">
             <span className="text-xs text-gray-400">Call-center</span>
             <p className="font-bold text-center mt-4">+1 212-121-2121</p>
           </div>
 
-          <div className="w-1/3 ml-6 h-40 border border-black flex flex-col justify-center items-center px-10">
+          <div className="w-full lg:w-1/3 lg:ml-6 h-40 border border-black flex flex-col justify-center items-center px-10">
             <span className="text-xs text-gray-400">Email</span>
             <p className="font-bold text-center mt-4">sales@shop.com</p>
           </div>

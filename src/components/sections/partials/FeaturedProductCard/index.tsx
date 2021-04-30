@@ -14,8 +14,8 @@ const FeaturedProductCard: React.FC<{
     setSlicedName(name.slice(0, 62) + "...");
   }
   return (
-    <div className="w-11/50 h-104 border border-gray-100 mt-2 mb-2">
-      <div className="h-5/6 relative">
+    <div className="w-full lg:w-11/50 h-96 lg:h-104 border border-gray-100 mt-2 mb-2">
+      <div className="h-4/6 relative">
         <Link to={`/products/${id}`}>
           <Image url={image} />
         </Link>
@@ -23,13 +23,13 @@ const FeaturedProductCard: React.FC<{
           <BsHeart size={20} />
         </div> */}
       </div>
-      <div className="mt-4">
+      <div className="lg:mt-4">
         <Link to={`/products/${id}`}>
-          <div className="px-1 text-center font-semibold text-sm">
+          <div className="px-1 text-center font-semibold text-regular lg:text-sm">
             <span data-tip={name}>{slicedName}</span>
             <ReactTooltip />
           </div>
-          <p className="text-center text-xs">${price}</p>
+          <p className="text-center lg:text-xs">${price}</p>
         </Link>
       </div>
     </div>

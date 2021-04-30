@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
         <p className="px-2">Youtube</p>
       </div>
 
-      <p className="uppercase text-xs h-12 flex items-center justify-center">
+      <p className="uppercase text-base lg:text-xs h-12 flex items-center justify-center">
         <span className="flex items-center justify-center mr-1">
           <AiFillGithub size={16} className="mr-1" /> gdstp
         </span>

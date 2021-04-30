@@ -11,7 +11,7 @@ const Input: React.FC<{
       <label>{label}</label>
       <input
         {...register(label, { required })}
-        className="w-4/5 h-12 px-2 border border-gray-200"
+        className="w-full lg:w-4/5 h-12 px-2 border border-gray-200"
       />
       {errors[label] && (
         <p className="text-red-500">Please enter your {label} </p>

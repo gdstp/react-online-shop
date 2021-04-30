@@ -18,8 +18,10 @@ const Subscribe: React.FC = () => {
     <Container className="w-full h-72 mt-40 bg-primary flex flex-col justify-center items-center">
       {!success ? (
         <>
-          <p className="text-4xl font-bold">Subscribe and Get 15% Off</p>
-          <div className="w-96 flex items-center mt-6">
+          <p className="text-xl lg:text-4xl font-bold">
+            Subscribe and Get 15% Off
+          </p>
+          <div className="w-64 lg:w-96 flex items-center mt-6">
             <input
               type="text"
               className="w-80 h-12 px-4"
@@ -28,7 +30,7 @@ const Subscribe: React.FC = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <button
-              className="w-14 h-14 -ml-8 rounded-full bg-black flex items-center justify-center"
+              className="w-20 lg:w-14 h-14 -ml-8 rounded-full bg-black flex items-center justify-center"
               onClick={() => handleClick()}
             >
               <BsArrowRightShort size={20} color="white" />
@@ -38,7 +40,7 @@ const Subscribe: React.FC = () => {
         </>
       ) : (
         <>
-          <p className="text-center text-2xl">
+          <p className="text-center text-xl lg:text-2xl">
             <strong>Thanks for subscribing!</strong> <br /> check your e-mail
             for more information.
           </p>

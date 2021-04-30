@@ -9,7 +9,7 @@ const CartTotal: React.FC<Partial<HTMLDivElement>> = ({ ...rest }) => {
     let valueItem = 0;
     cart.map((item) => {
       valueItem = valueItem + parseInt(item.quantity) * parseFloat(item.price);
-      setTotal(valueItem + 20);
+      setTotal(parseInt((valueItem + 20).toFixed(2)));
     });
     cart.length === 0 && setTotal(0);
   }, [cart]);

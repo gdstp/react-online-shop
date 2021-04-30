@@ -13,6 +13,7 @@ module.exports = {
       },
       height: {
         hero: "calc(100vh - 10rem)",
+        heroMobile: "270px",
         categoryImages: "34.875rem",
         categoryContainer: "43.875rem",
         104: "28rem",

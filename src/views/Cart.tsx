@@ -15,7 +15,7 @@ const Cart: React.FC = () => {
 
       <div className="w-full flex mt-3 border-b h-10">
         <div className="w-2/3">Product</div>
-        <div className="w-1/4 flex justify-between">
+        <div className="w-1/4 lg:flex justify-between hidden">
           <div>Price</div>
           <div>Quantity</div>
           <div>Total</div>
@@ -37,10 +37,10 @@ const Cart: React.FC = () => {
         />
       ))}
 
-      <div className="w-full flex justify-between items-center mt-4">
-        <div className="mt-1">
+      <div className="w-full flex lg:flex-row flex-col justify-between items-center mt-4">
+        <div className="mt-1 mb-3">
           <p className="text-sm">Do you have a discount?</p>
-          <div className="w-96 flex items-center mt-1">
+          <div className="w-full lg:w-96 flex items-center mt-1">
             <input
               type="text"
               className="w-80 h-12 px-4 bg-gray-100"

@@ -16,15 +16,21 @@ const Image = styled.div<{ image: string }>`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 1024px) {
+    padding: 50px 0;
+    height: 550px;
+    background-size: cover;
+  }
 `;
 
 const CheckoutCompleted: React.FC = () => {
   return (
     <Image image={Bg}>
-      <div className="flex items-center flex-col text-4xl font-semibold">
+      <div className="flex items-center flex-col text-2xl lg:text-4xl font-semibold w-screen px-14">
         <p>Thanks!</p>
         <p>Your order is complete.</p>
-        <span className="text-base font-normal mt-6">
+        <span className="lg:text-base font-normal text-xl mt-6 text-center">
           We sent a confirmation to your email.
         </span>
       </div>

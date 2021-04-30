@@ -16,7 +16,7 @@ const CartItem: React.FC<CartInterface> = ({
   const [amount, setAmount] = useState(quantity);
 
   useEffect(() => {
-    setFinalPrice(parseFloat(price) * parseInt(amount));
+    setFinalPrice(parseInt((parseFloat(price) * parseInt(amount)).toFixed(4)));
   }, [price, amount]);
 
   const removeItem = () => {
@@ -39,9 +39,9 @@ const CartItem: React.FC<CartInterface> = ({
 
   return (
     <div className="w-full flex flex-col" key={id}>
-      <div className="w-full flex border-b">
-        <div className="w-2/3 h-48 flex items-center">
-          <div className="w-32 h-40">
+      <div className="w-full flex lg:flex-row flex-col border-b">
+        <div className="w-full lg:w-2/3 h-48 flex items-center">
+          <div className="w-64 lg:w-32 h-40">
             <ProductImage image={image} />
           </div>
           <div className="h-full flex items-center">
@@ -49,7 +49,7 @@ const CartItem: React.FC<CartInterface> = ({
           </div>
         </div>
 
-        <div className="w-1/3 flex items-center justify-between">
+        <div className="w-full lg:pb-0 pb-4 lg:w-1/3 flex lg:mt-0 items-center justify-between">
           <div>${price}</div>
           <div className="flex items-center border justify-between w-14 px-2 py-2">
             {amount}

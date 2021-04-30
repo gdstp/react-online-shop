@@ -26,7 +26,9 @@ const FeaturedProducts: React.FC = () => {
     <div>
       {error && <p>{error}</p>}
       <div className="w-full flex flex-col items-center mt-16">
-        <h1 className="text-4xl font-semibold">Featured Products</h1>
+        <h1 className="text-2xl lg:text-4xl font-semibold">
+          Featured Products
+        </h1>
         {/* <div className="flex mt-6">
           <p className="px-2 border-b">All</p>
           <p className="px-2 text-gray-600">Popular</p>
@@ -34,7 +36,7 @@ const FeaturedProducts: React.FC = () => {
           <p className="px-2 text-gray-600">Sale</p>
         </div> */}
       </div>
-      <div className="w-full flex justify-between mt-8">
+      <div className="w-full flex lg:flex-row lg:flex-nowrap flex-wrap justify-between mt-8">
         {loading &&
           [0, 1, 2, 3].map((item) => <FeatureProductsLoading key={item} />)}
         {products &&

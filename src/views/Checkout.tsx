@@ -24,12 +24,12 @@ const Checkout: React.FC = () => {
   return (
     <div>
       <SectionHeader text="Checkout" />
-      <div className="flex justify-between mt-6">
+      <div className="flex flex-col-reverse lg:flex-row justify-between mt-6">
         <form
-          className="w-2/3 h-1/2 flex flex-col justify-between"
+          className="lg:w-2/3 h-1/2 lg:mt-0 mt-4 flex flex-col justify-between"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="w-full flex justify-between">
+          <div className="w-full flex lg:flex-row flex-col justify-between">
             <Input
               label="E-mail"
               register={register}
@@ -40,7 +40,7 @@ const Checkout: React.FC = () => {
           </div>
 
           <p className="font-semibold text-2xl mt-6">Shipping address</p>
-          <div className="w-full flex justify-between mt-3">
+          <div className="w-full flex lg:flex-row flex-col justify-between mt-3">
             <Input
               label="First name"
               register={register}
@@ -55,7 +55,7 @@ const Checkout: React.FC = () => {
             />
           </div>
 
-          <div className="w-full flex justify-between mt-3">
+          <div className="w-full flex lg:flex-row flex-col justify-between mt-3">
             <Input
               label="Address"
               register={register}
@@ -70,7 +70,7 @@ const Checkout: React.FC = () => {
             />
           </div>
 
-          <div className="w-full flex justify-between mt-3">
+          <div className="w-full flex lg:flex-row flex-col justify-between mt-3">
             <Input label="City" register={register} errors={errors} required />
             <Input
               label="Country"
@@ -80,7 +80,7 @@ const Checkout: React.FC = () => {
             />
           </div>
 
-          <div className="w-1/2 flex justify-between mt-3">
+          <div className="w-full lg:w-1/2 flex lg:flex-row flex-col justify-between mt-3">
             <Input
               label="Postal Code"
               register={register}
@@ -94,7 +94,7 @@ const Checkout: React.FC = () => {
             title=""
             items={["Visa / Mastercard", "Paypal"]}
           />
-          <div className="w-full flex justify-center mt-10">
+          <div className="w-full flex lg:flex-row flex-col justify-center mt-10">
             <button
               type="submit"
               disabled={cart.length === 0 ? true : false}

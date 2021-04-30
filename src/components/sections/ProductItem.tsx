@@ -17,6 +17,11 @@ const Image = styled.div<{ image: string }>`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 302px;
+  }
 `;
 
 const ProductItem: React.FC = () => {
@@ -54,11 +59,11 @@ const ProductItem: React.FC = () => {
     <>
       {loading && <ProductItemLoading />}
       {error && <Redirect to="/404" />}
-      {product && (
+      {!loading && product && (
         <>
-          <div className="flex justify-between h-auto ">
+          <div className="flex flex-col lg:flex-row justify-between h-auto">
             <Image image={product.image} />
-            <div className="w-1/2 px-14 flex flex-col justify-center -mt-24">
+            <div className="w-full lg:w-1/2 lg:px-14 flex flex-col justify-center mt-24 lg:-mt-24">
               <div className="flex flex-col">
                 <p className="text-3xl font-semibold">{product.title}</p>
                 <p className="mt-1">${product.price}</p>
@@ -74,14 +79,21 @@ const ProductItem: React.FC = () => {
               />
 
               <div className="flex mt-8">
-                <button
-                  className="w-40 py-2 bg-black text-white"
-                  onClick={() => handleClick()}
-                >
-                  {!cart.some((item) => item.id === product.id)
-                    ? "Add to Cart"
-                    : "Remove from Cart"}
-                </button>
+                {!cart.some((item) => item.id === product.id) ? (
+                  <button
+                    className="w-40 py-2 bg-black text-white"
+                    onClick={() => handleClick()}
+                  >
+                    Add to Cart
+                  </button>
+                ) : (
+                  <button
+                    className="w-40 py-2 bg-red-500 text-white"
+                    onClick={() => handleClick()}
+                  >
+                    Remove from Cart
+                  </button>
+                )}
                 {/* <button className="flex justify-center ml-4 items-center w-40 py-2 text-sm font-semibold hover:text-red-500 transition">
                   <BiHeart size={20} className="mr-2" />
                   Add to Favorites
@@ -91,7 +103,7 @@ const ProductItem: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-24 pb-24 w-1/2 mx-auto">
+          <div className="mt-24 pb-24 w-full lg:w-1/2 mx-auto">
             <div className="w-48 m-auto flex justify-between">
               <ProductInfoSwitch onClick={(value) => setDesc(value)} />
             </div>

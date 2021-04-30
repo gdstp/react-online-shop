@@ -35,8 +35,8 @@ const Hero: React.FC = () => {
   }, [selectedItem]);
 
   return (
-    <div className="h-hero flex flex-col">
-      <div className="bg-gray-200 h-5/6">
+    <div className="lg:h-hero h-heroMobile flex flex-col">
+      <div className="bg-gray-200 h-5/6 ">
         {HeroArr.map((item, index) => (
           <HeroItem
             key={item.title}

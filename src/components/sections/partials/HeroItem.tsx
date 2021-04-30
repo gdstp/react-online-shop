@@ -13,7 +13,7 @@ const HeroItem: React.FC<{
       } w-full h-full flex-col justify-center items-center relative`}
     >
       <div className="absolute z-20 flex flex-col justify-center items-center">
-        <p className="text-5xl font-semibold text-white">{title}</p>
+        <p className="text-3xl lg:text-5xl font-semibold text-white">{title}</p>
         <button className="px-4 py-2 mt-20 bg-white text-black text-lg font-semibold">
           {button}
         </button>

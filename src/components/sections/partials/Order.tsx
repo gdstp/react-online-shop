@@ -7,7 +7,7 @@ const Order: React.FC = () => {
   const { cart } = useContext(AppCtx);
 
   return (
-    <div className="w-1/3">
+    <div className="w-full lg:w-1/3">
       <p className="pb-2 border-b">Your order</p>
       <div className="flex flex-col">
         {cart.map((item) => (

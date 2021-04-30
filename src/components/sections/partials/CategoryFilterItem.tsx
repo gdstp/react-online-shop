@@ -26,7 +26,7 @@ const CategoryFilterItem: React.FC<Partial<HTMLDivElement> & ItemProps> = ({
   };
 
   return (
-    <div className={`w-11/50 relative ${rest.className}`}>
+    <div className={`w-full lg:w-11/50 relative ${rest.className}`}>
       <p className="text-sm mb-1">{title}</p>
       <DropdownItem onClick={() => setShow(!show)} item={current}>
         {!show ? <BiChevronDown size={20} /> : <BiChevronUp size={20} />}

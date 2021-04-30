@@ -7,14 +7,14 @@ const About: React.FC = () => {
     <div>
       <SectionHeader text="About" />
       <div className="flex flex-col mt-14">
-        <p className="w-2/3 m-auto text-center">
+        <p className="w-full lg:w-2/3 m-auto text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed
           fermentum nibh, vel aliquet massa. Etiam in magna id risus lacinia
           luctus eget eu est.
         </p>
-        <div className="w-full mt-14 flex justify-between">
-          <div className="w-1/2 h-104 bg-gray-200"></div>
-          <div className="w-1/2 h-104 px-24 text-center flex flex-col justify-center items-center">
+        <div className="w-full mt-14 flex lg:flex-row flex-col justify-between">
+          <div className="lg:w-1/2 lg:h-104 bg-gray-200"></div>
+          <div className="lg:w-1/2 lg:px-24 text-center flex flex-col justify-center items-center">
             <div className="w-8 h-8 mb-4 bg-primary rounded-full"></div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
