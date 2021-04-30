@@ -1,6 +1,6 @@
+import React, { useContext, useEffect, useState } from "react";
 import ProductImage from "components/ui/ProductImage";
 import { AppCtx, CartInterface } from "context";
-import React, { useContext, useEffect, useState } from "react";
 import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 

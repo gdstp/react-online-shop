@@ -34,9 +34,16 @@ const Checkout: React.FC = () => {
               label="E-mail"
               register={register}
               errors={errors}
+              type="email"
               required
             />
-            <Input label="Phone" register={register} errors={errors} required />
+            <Input
+              label="Phone"
+              register={register}
+              errors={errors}
+              mask="(+7 (999) 999-99-99)"
+              required
+            />
           </div>
 
           <p className="font-semibold text-2xl mt-6">Shipping address</p>
@@ -85,6 +92,7 @@ const Checkout: React.FC = () => {
               label="Postal Code"
               register={register}
               errors={errors}
+              type="number"
               required
             />
           </div>
@@ -93,6 +101,7 @@ const Checkout: React.FC = () => {
           <CategoryFilterItem
             title=""
             items={["Visa / Mastercard", "Paypal"]}
+            className="lg:w-2/5"
           />
           <div className="w-full flex lg:flex-row flex-col justify-center mt-10">
             <button

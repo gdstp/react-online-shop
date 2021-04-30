@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BsArrowRightShort } from "react-icons/bs";
-import Container from "../layout/Container";
 
 const Subscribe: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -15,7 +14,7 @@ const Subscribe: React.FC = () => {
   };
 
   return (
-    <Container className="w-full h-72 mt-40 bg-primary flex flex-col justify-center items-center">
+    <div className="w-full h-72 mt-40 bg-primary flex flex-col justify-center items-center">
       {!success ? (
         <>
           <p className="text-xl lg:text-4xl font-bold">
@@ -24,13 +23,13 @@ const Subscribe: React.FC = () => {
           <div className="w-64 lg:w-96 flex items-center mt-6">
             <input
               type="text"
-              className="w-80 h-12 px-4"
+              className="lg:w-80 w-64 h-12 px-4"
               placeholder="Your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <button
-              className="w-20 lg:w-14 h-14 -ml-8 rounded-full bg-black flex items-center justify-center"
+              className="lg:w-14 lg:h-14 -ml-8 rounded-full bg-black flex items-center justify-center"
               onClick={() => handleClick()}
             >
               <BsArrowRightShort size={20} color="white" />
@@ -46,7 +45,7 @@ const Subscribe: React.FC = () => {
           </p>
         </>
       )}
-    </Container>
+    </div>
   );
 };
 

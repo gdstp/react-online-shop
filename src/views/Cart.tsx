@@ -52,7 +52,11 @@ const Cart: React.FC = () => {
           </div>
         </div>
 
-        <CategoryFilterItem title="Shipping" items={["Express Delivery $20"]} />
+        <CategoryFilterItem
+          title="Shipping"
+          items={["Express Delivery $20"]}
+          className="lg:w-1/3"
+        />
       </div>
 
       <CheckoutButton />

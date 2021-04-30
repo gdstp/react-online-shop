@@ -99,7 +99,9 @@ const ProductItem: React.FC = () => {
                   Add to Favorites
                 </button> */}
               </div>
-              <p className="mt-6">{product.description}</p>
+              <p className="mt-6">
+                {product.description.slice(0, 300) + "..."}
+              </p>
             </div>
           </div>
 
